@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>schnorr.js</title>
+  </head>
+  <body>
+    <!-- brief intro -->
+    <h1>Welcome to schnorr.js, a <a href="https://en.wikipedia.org/wiki/Schnorr_group">Schnorr group</a> calculator</h1>
+    <p><strong>Note:</strong> This isn't yet implemented....</p>
+
+    <h2>Parameters</h2>
+    <p>Please enter primes p and q such that p=r*q+1 for some r satisfying 1&lt;r&lt;q&lt;p. You may also enter a generator g if you know what you're doing; otherwise the script will choose the first g that works.</p>
+    <p>p: <input type="number" id="p" autofocus="true" /></p>
+    <p>q: <input type="number" id="q" /></p>
+    <p>g: <input type="number" id="g" /> <span id="g-note" style="color:red"></span></p>
+
+    <h2>Operations</h2>
+    <p><button onclick="sum()">Prove that you know numbers which add up to a+b. </button>
+      <input type="number" id="a" />
+      <input type="number" id="b" />
+      <span id="zk-a+b"></span>
+    </p>
+
+    <script src="./util.js"></script>
+    <script src="./params.js"></script>
+    <script src="./schnorr.js"></script>
+    <noscript>Please enable JavaScript for this to work.</noscript>
+  </body>
+</html>
