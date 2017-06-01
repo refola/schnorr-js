@@ -1,15 +1,22 @@
 // util.js
-// utility function(s)
+// utility function
 
 // helper function for debugging
 function log(message) {
-    // Note: Getting the line number like this is very
-    // browser-specific. This is currently only tested in Firefox on
-    // Linux.
-    line=new Error().stack.split('\n')[1].split(':').reverse().splice(0,2).reverse().join(':');
-    console.log(new Error().stack.split('\n')[1]);
-    console.log(line+": "+message);
+    // x is an array of the slash-split location where log() was
+    // called from. Note that this is very platform-specific and has
+    // only been tested in Firefox on Linux, where it shows the
+    // filename and line number.
+    var x=new Error().stack.split('\n')[1].split('/');
+    console.log(x[x.length-1]+": "+message);
 }
 
-// GLobal OBjects
-var glob={};
+// return a^b mod m
+function expMod(a, b, m){
+    var ans=a;
+    for(var i=0;i<b;i++){
+        ans*=a;
+        ans%=m;
+    }
+    return ans;
+}

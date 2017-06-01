@@ -1,36 +1,36 @@
+// params.js
+// process parameters
+
 var inputIds=['p', 'q', 'g', 'a', 'b'];
 var spanIds=['g-note', 'zk-a+b'];
 
-// retrieve form inputs and save to glob
-function getInputs(){
+// retrieve form input
+function getInput(){
+    var input={}
     // get parameters by ID
     for(var i in inputIds){
         var name=inputIds[i];
-        var val=getValue(v);
+        var val=get(name);
         // convert to number if possible
         if(!isNaN(Number(val))){
             val=Number(val);
         }
-        glob[name]=val;
+        input[name]=val;
     }
+    return input;
 }
 
-// Convenience function for setting text in a text box
-function setValue(name, value){
+// Convenience function for setting values by id
+function setContent(name, value){
     var elt=document.getElementById(name);
     if(elt!=null){
-        elt.value=value;
+        elt.textContent=value;
     }else{
         log("Can't set "+name+" to "+value+": null");
     }
 }
 
-// Convenience function for getting elements by ID.
-function get(name) {
-    return document.getElementById(name);
-}
-
-// Convenience function for getting text from a text box
-function getValue(name){
-    return get(name).value;
+// Convenience function for getting values by id
+function get(name){
+    return document.getElementById(name).value;
 }
