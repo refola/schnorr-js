@@ -13,7 +13,7 @@ function log(message) {
 
 // return a^b mod m
 function expMod(a, b, m) {
-    var ans = a;
+    var ans = 1;
     for (var i = 0; i < b; i++) {
         ans *= a;
         ans %= m;
